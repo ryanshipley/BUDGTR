@@ -20,5 +20,11 @@ app.get("/budgets", (req, res) =>{
     });
 });
 
+app.get("/budgets/:id", (req, res) =>{
+    res.render("show.ejs" , {
+        budget : budget[req.params.id],
+    });
+});
+
 //Listen to port 3000.
 app.listen(3000);
