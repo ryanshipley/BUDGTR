@@ -1,7 +1,7 @@
 //Initialize basic server elements.
 const express = require("express");
 const app = express();
-
+const budget = require("./models/budget.js");
 
 app.use(express.urlencoded({extended: false}));
 
@@ -12,6 +12,12 @@ app.use(express.urlencoded({extended: false}));
 */
 app.get("/", (req, res)=>{
     res.send("yo");
+});
+
+app.get("/budgets", (req, res) =>{
+    res.render("index.ejs",{
+        budget,
+    });
 });
 
 //Listen to port 3000.
