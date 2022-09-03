@@ -20,6 +20,10 @@ app.get("/budgets", (req, res) =>{
     });
 });
 
+app.get("/budgets/new", (req, res)=>{
+    res.render("new.ejs");
+});
+
 app.get("/budgets/:id", (req, res) =>{
     res.render("show.ejs" , {
         budget : budget[req.params.id],
