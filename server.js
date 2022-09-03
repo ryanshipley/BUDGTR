@@ -24,6 +24,11 @@ app.get("/budgets/new", (req, res)=>{
     res.render("new.ejs");
 });
 
+app.post("/budgets", (req, res)=>{
+    budget.push(req.body),
+    res.redirect("/budgets");
+});
+
 app.get("/budgets/:id", (req, res) =>{
     res.render("show.ejs" , {
         budget : budget[req.params.id],
