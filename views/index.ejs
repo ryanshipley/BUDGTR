@@ -11,9 +11,11 @@
 
 </head>
 <body>
-
+    <%let bankAccount = budget.reduce((acc, budget)=>{
+        return acc + parseInt(budget.amount);
+    }, 0);%>
 <div class="container">
-        <h1>BUDGTR</h1> 
+        <h1>BUDGTR</h1> <h2>Balance: <%="$" + bankAccount%></h2>
     <table>
         <% for(let i=0; i < budget.length; i++){%>
             <tr>
