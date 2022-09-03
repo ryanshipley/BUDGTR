@@ -27,6 +27,18 @@
     </table>
     <nav><a href="/budgets/new">Add another expense</a></nav>
 </div>
-
+<% if (bankAccount > 1000) { %>
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+<% } else if (bankAccount < 0) { %>
+    <style>
+        body {
+            background-color: red;
+        }
+    </style>
+<% } %>
 </body>
 </html>
